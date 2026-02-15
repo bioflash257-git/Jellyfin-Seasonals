@@ -53,10 +53,10 @@ const ThemeConfigs = {
         js: '../Seasonals/Resources/easter.js',
         containerClass: 'easter-container'
     },
-    ressurection: {
-        css: '../Seasonals/Resources/ressurection.css',
-        js: '../Seasonals/Resources/ressurection.js',
-        containerClass: 'ressurection-container'
+    resurrection: {
+        css: '../Seasonals/Resources/resurrection.css',
+        js: '../Seasonals/Resources/resurrection.js',
+        containerClass: 'resurrection-container'
     },
     summer: {
         css: '../Seasonals/Resources/summer.css',
@@ -196,7 +196,8 @@ const SeasonalSettingsManager = {
         // Set Initial Values
         const enabledCheckbox = popup.querySelector('#seasonal-enable-toggle');
         enabledCheckbox.checked = this.getSetting('enabled', 'true') === 'true';
-        themeSelect.value = this.getSetting('theme', 'auto');
+        const savedTheme = this.getSetting('theme', 'auto');
+        themeSelect.value = savedTheme === 'ressurection' ? 'resurrection' : savedTheme;
 
         // Event Listeners
         enabledCheckbox.addEventListener('change', (e) => {
@@ -270,15 +271,17 @@ const SeasonalsManager = {
     },
 
     selectTheme() {
+        const normalizeThemeName = (themeName) => themeName === 'ressurection' ? 'resurrection' : themeName;
+
         // Check local override
-        const forcedTheme = SeasonalSettingsManager.getSetting('theme', 'auto');
+        const forcedTheme = normalizeThemeName(SeasonalSettingsManager.getSetting('theme', 'auto'));
         if (forcedTheme !== 'auto') {
             console.log(`Seasonals: User forced theme: ${forcedTheme}`);
             return forcedTheme;
         }
 
         const automate = this.config ? this.config.AutomateSeasonSelection : true;
-        const defaultTheme = this.config ? this.config.SelectedSeason : 'none';
+        const defaultTheme = normalizeThemeName(this.config ? this.config.SelectedSeason : 'none');
 
         if (!automate) {
             return defaultTheme;

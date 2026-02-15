@@ -10,6 +10,14 @@
     "versions": [
       {
         "version": "1.0.0.11",
+        "changelog": "### Codex-generated pull request\n\nCodex generated this pull request, but encountered an unexpected error after generation. This is a placeholder PR message.\n\n------\n[Codex Task](https://chatgpt.com/codex/tasks/task_e_699133784b148327933100ee3e2e2746)",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/bioflash257-git/Jellyfin-Seasonals/releases/download/v1.0.0.11/Jellyfin.Plugin.Seasonals.zip",
+        "checksum": "f1b8a565daed80588dd65d4fce36e85c",
+        "timestamp": "2026-02-15T02:50:19Z"
+      },
+      {
+        "version": "1.0.0.11",
         "changelog": "- Auto bump version to v1.0.0.10 [skip ci] (a8f1dd1)\n- Delete Jellyfin.Plugin.Seasonals/Web/resurrection_images/README.md (b0b2a38)",
         "targetAbi": "10.11.0.0",
         "sourceUrl": "https://github.com/bioflash257-git/Jellyfin-Seasonals/releases/download/v1.0.0.10/Jellyfin.Plugin.Seasonals.zip",

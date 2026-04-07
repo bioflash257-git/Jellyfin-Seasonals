@@ -80,28 +80,28 @@ public class PluginConfiguration : BasePluginConfiguration
     public string SeasonalRules { get; set; } = "[" +
         "{\"Name\":\"New Year Fireworks\",\"StartDay\":28,\"StartMonth\":12,\"EndDay\":5,\"EndMonth\":1,\"Theme\":\"fireworks\"}," +
         "{\"Name\":\"Snowfall (January)\",\"StartDay\":1,\"StartMonth\":1,\"EndDay\":31,\"EndMonth\":1,\"Theme\":\"snowfall\"}," +
-        "{\"Name\":\"Snowfall (February)\",\"StartDay\":1,\"StartMonth\":2,\"EndDay\":29,\"EndMonth\":2,\"Theme\":\"snowfall\"}," +
         "{\"Name\":\"Valentine's Day\",\"StartDay\":10,\"StartMonth\":2,\"EndDay\":18,\"EndMonth\":2,\"Theme\":\"hearts\"}," +
         "{\"Name\":\"Carnival\",\"StartDay\":19,\"StartMonth\":2,\"EndDay\":28,\"EndMonth\":2,\"Theme\":\"carnival\"}," +
         "{\"Name\":\"Oscar Awards\",\"StartDay\":23,\"StartMonth\":2,\"EndDay\":5,\"EndMonth\":3,\"Theme\":\"oscar\"}," +
+        "{\"Name\":\"Snowfall (February)\",\"StartDay\":1,\"StartMonth\":2,\"EndDay\":29,\"EndMonth\":2,\"Theme\":\"snowfall\"}," +
         "{\"Name\":\"Mario Day\",\"StartDay\":10,\"StartMonth\":3,\"EndDay\":10,\"EndMonth\":3,\"Theme\":\"marioday\"}," +
         "{\"Name\":\"Film Noir Day\",\"StartDay\":17,\"StartMonth\":3,\"EndDay\":17,\"EndMonth\":3,\"Theme\":\"filmnoir\"}," +
-        "{\"Name\":\"Spring\",\"StartDay\":1,\"StartMonth\":3,\"EndDay\":31,\"EndMonth\":5,\"Theme\":\"spring\"}," +
-        "{\"Name\":\"Cherry Blossom\",\"StartDay\":1,\"StartMonth\":4,\"EndDay\":30,\"EndMonth\":4,\"Theme\":\"cherryblossom\"}," +
-        "{\"Name\":\"Easter\",\"StartDay\":25,\"StartMonth\":3,\"EndDay\":25,\"EndMonth\":4,\"Theme\":\"easter\"}," +
-        "{\"Name\":\"Earth Day\",\"StartDay\":22,\"StartMonth\":4,\"EndDay\":22,\"EndMonth\":4,\"Theme\":\"earthday\"}," +
         "{\"Name\":\"Space Day\",\"StartDay\":12,\"StartMonth\":4,\"EndDay\":12,\"EndMonth\":4,\"Theme\":\"space\"}," +
+        "{\"Name\":\"Earth Day\",\"StartDay\":22,\"StartMonth\":4,\"EndDay\":22,\"EndMonth\":4,\"Theme\":\"earthday\"}," +
+        "{\"Name\":\"Easter\",\"StartDay\":25,\"StartMonth\":3,\"EndDay\":25,\"EndMonth\":4,\"Theme\":\"easter\"}," +
+        "{\"Name\":\"Cherry Blossom\",\"StartDay\":1,\"StartMonth\":4,\"EndDay\":30,\"EndMonth\":4,\"Theme\":\"cherryblossom\"}," +
         "{\"Name\":\"Star Wars Day\",\"StartDay\":4,\"StartMonth\":5,\"EndDay\":5,\"EndMonth\":5,\"Theme\":\"starwars\"}," +
         "{\"Name\":\"Eurovision\",\"StartDay\":6,\"StartMonth\":5,\"EndDay\":12,\"EndMonth\":5,\"Theme\":\"eurovision\"}," +
+        "{\"Name\":\"Spring\",\"StartDay\":1,\"StartMonth\":3,\"EndDay\":31,\"EndMonth\":5,\"Theme\":\"spring\"}," +
         "{\"Name\":\"Pride Month\",\"StartDay\":1,\"StartMonth\":6,\"EndDay\":30,\"EndMonth\":6,\"Theme\":\"pride\"}," +
-        "{\"Name\":\"Summer\",\"StartDay\":1,\"StartMonth\":6,\"EndDay\":31,\"EndMonth\":8,\"Theme\":\"summer\"}," +
         "{\"Name\":\"Underwater\",\"StartDay\":1,\"StartMonth\":7,\"EndDay\":31,\"EndMonth\":8,\"Theme\":\"underwater\"}," +
-        "{\"Name\":\"Autumn\",\"StartDay\":1,\"StartMonth\":9,\"EndDay\":30,\"EndMonth\":11,\"Theme\":\"autumn\"}," +
+        "{\"Name\":\"Summer\",\"StartDay\":1,\"StartMonth\":6,\"EndDay\":31,\"EndMonth\":8,\"Theme\":\"summer\"}," +
         "{\"Name\":\"Oktoberfest\",\"StartDay\":20,\"StartMonth\":9,\"EndDay\":5,\"EndMonth\":10,\"Theme\":\"oktoberfest\"}," +
-        "{\"Name\":\"Halloween\",\"StartDay\":24,\"StartMonth\":10,\"EndDay\":5,\"EndMonth\":11,\"Theme\":\"halloween\"}," +
         "{\"Name\":\"Spooky (Pre-Halloween)\",\"StartDay\":1,\"StartMonth\":10,\"EndDay\":23,\"EndMonth\":10,\"Theme\":\"spooky\"}," +
-        "{\"Name\":\"Snowflakes (December)\",\"StartDay\":1,\"StartMonth\":12,\"EndDay\":31,\"EndMonth\":12,\"Theme\":\"snowflakes\"}," +
-        "{\"Name\":\"Santa\",\"StartDay\":22,\"StartMonth\":12,\"EndDay\":27,\"EndMonth\":12,\"Theme\":\"santa\"}" +
+        "{\"Name\":\"Halloween\",\"StartDay\":24,\"StartMonth\":10,\"EndDay\":5,\"EndMonth\":11,\"Theme\":\"halloween\"}," +
+        "{\"Name\":\"Autumn\",\"StartDay\":1,\"StartMonth\":9,\"EndDay\":30,\"EndMonth\":11,\"Theme\":\"autumn\"}," +
+        "{\"Name\":\"Santa\",\"StartDay\":22,\"StartMonth\":12,\"EndDay\":27,\"EndMonth\":12,\"Theme\":\"santa\"}," +
+        "{\"Name\":\"Snowflakes (December)\",\"StartDay\":1,\"StartMonth\":12,\"EndDay\":31,\"EndMonth\":12,\"Theme\":\"snowflakes\"}" +
         "]";
 
     /// <summary>

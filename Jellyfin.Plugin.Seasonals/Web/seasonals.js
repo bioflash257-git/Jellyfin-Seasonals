@@ -393,8 +393,8 @@ const SeasonalsManager = {
             return forcedTheme;
         }
 
-        const automate = this.config ? this.config.AutomateSeasonSelection : true;
-        const defaultTheme = this.config ? this.config.SelectedSeason : 'none';
+        const automate = (this.config && this.config.AutomateSeasonSelection !== undefined) ? this.config.AutomateSeasonSelection : true;
+        const defaultTheme = (this.config && this.config.SelectedSeason) ? this.config.SelectedSeason : 'none';
 
         if (!automate) {
             return defaultTheme;
@@ -406,7 +406,11 @@ const SeasonalsManager = {
     determineCurrentThemeDate() {
         var rules = [];
         try {
-            rules = JSON.parse(this.config.SeasonalRules || "[]");
+            const rulesStr = (this.config && this.config.SeasonalRules) ? this.config.SeasonalRules : "[]";
+            rules = JSON.parse(rulesStr);
+            if (!Array.isArray(rules)) {
+                rules = [];
+            }
         } catch (e) {
             console.error("Seasonals: Error parsing SeasonalRules", e);
         }

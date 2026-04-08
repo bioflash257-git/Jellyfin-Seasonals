@@ -2,12 +2,20 @@
   {
     "guid": "ef1e863f-cbb0-4e47-9f23-f0cbb1826ad4",
     "name": "Seasonals",
-    "description": "Adds atmospheric, animated seasonal effects like snow, falling leaves, hearts, fireworks and more. The plugin provides a settings page for configuration. If you do not have write permissions to the web folder, please also install the file-transformation plugin.",
+    "description": "✨ Add seasonal magic to your UI! Brings your home screen to life with animated effects like ❄️ Snow, 🍂 Falling Leaves, ❤️ Hearts, 🎆 Fireworks, and more. ★ Fully Configurable: Easily adjust all animations via the plugin settings page. ⚠ Note: Requires the 'file-transformation' plugin if write permissions to the web folder are restricted.",
     "overview": "Atmospheric, configurable seasonal effects for the Jellyfin web interface",
     "owner": "CodeDevMLH",
     "category": "General",
     "imageUrl": "https://raw.githubusercontent.com/CodeDevMLH/Jellyfin-Seasonals/refs/heads/main/logo.png",
     "versions": [
+      {
+        "version": "2.0.1.0",
+        "changelog": "Improve config handling for season selection and seasonal rules parsing",
+        "targetAbi": "10.11.0.0",
+        "sourceUrl": "https://github.com/CodeDevMLH/Jellyfin-Seasonals/releases/download/v2.0.1.0/Jellyfin.Plugin.Seasonals.zip",
+        "checksum": "9c7cd3771c0454e60758bcfe681a0afc",
+        "timestamp": "2026-04-07T23:13:01Z"
+      },
       {
         "version": "2.0.0.0",
         "changelog": "feat: add new themes:\n- Birthday (ballons, computer mouse interactive)\n- Earthday\n- Eid al-Fitr (sugar feast/ramadan)\n- Eurovision/Music\n- Film Noir filter\n- Friday the 13\n- Frost\n- Mario Day\n- Matrix\n- Oktoberfest\n- Olympia\n- Oscar Awards\n- Pride\n- Rain\n- Spooky\n- Sports (many selectable balls of ball games like handball, football (soccer) or tennis)\n- Star Wars Day\n- Storm (Epilepsy Warning!!!, Thunderstorm)\nrefactored spring (new lawn with flowers), easter (new easter bunny, new lawn with flowers and ester eggs), halloween (add spiders (computer mouse sensitive), add mice, add fog) \nfix: many improvements and bug fixes e.g. changed top to translate/transform for performance reasons",

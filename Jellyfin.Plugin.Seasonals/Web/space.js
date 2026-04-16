@@ -168,33 +168,41 @@ function createSpace() {
     container.appendChild(starfield);
 
     // Shooting stars
-    const shootingStarCount = isMobile ? 1 : 2; // Less frequent
+    function spawnShootingStar(streak) {
+        // Random falling direction (15deg to 165deg, downwards)
+        const angle = Math.random() * 150 + 15;
+        streak.style.setProperty('--shoot-angle', `${angle}deg`);
+        
+        // Start anywhere on screen
+        streak.style.left = `${Math.random() * 100}vw`;
+        streak.style.top = `${Math.random() * 100}vh`;
+        
+        // Travel shorter distance so they start and end visually on-screen
+        const distance = Math.random() * 40 + 20; // 20vw to 60vw
+        streak.style.setProperty('--shoot-distance', `${distance}vw`);
+        
+        // Mathematically tie the width to exactly 25% of the flight distance.
+        const width = distance * 0.25; 
+        streak.style.width = `${width}vw`;
+
+        streak.style.animation = 'none';
+        void streak.offsetWidth; // force reflow
+        
+        // Wait a random amount of time before launching this star
+        const delayMs = Math.random() * 15000 + 2000; // 2 to 17 seconds
+        setTimeout(() => {
+            if (!document.body.contains(streak)) return; // cleanup safety
+            const flightTime = Math.random() * 2.5 + 2.0; // 2.0 to 4.5 seconds
+            streak.style.animation = `space-shoot ${flightTime}s linear forwards`;
+        }, delayMs);
+    }
+
+    const shootingStarCount = isMobile ? 2 : 4; 
     for (let i = 0; i < shootingStarCount; i++) {
         const streak = document.createElement('div');
         streak.className = 'space-shooting-star';
-        // Pick a random tail direction and fall direction to match
-        const isFromLeft = Math.random() > 0.5;
-        // Direction angle: random between 15deg-75deg (left) or 105deg-165deg (right)
-        // so they don't always fall in the exact same quadrant trajectory
-        let angle = isFromLeft 
-            ? Math.random() * 60 + 15 
-            : Math.random() * 60 + 105;
-        
-        streak.style.setProperty('--shoot-angle', `${angle}deg`);
-        
-        const topStart = Math.random() * 50; 
-        streak.style.left = isFromLeft ? '-20vw' : '120vw';
-        streak.style.top = `${topStart}vh`;
-        
-        // Travel 200 viewport widths exactly along the rotated angle
-        streak.style.setProperty('--shoot-distance', '200vw');
-        
-        streak.style.animationDelay = `${Math.random() * 20}s`; 
-        
-        // MARK: Shooting Star Speed
-        const flightCycleDuration = Math.random() * 10 + 15; // 15-25s
-        streak.style.animationDuration = `${flightCycleDuration}s`; 
-        
+        streak.addEventListener('animationend', () => spawnShootingStar(streak));
+        spawnShootingStar(streak);
         container.appendChild(streak);
     }
 

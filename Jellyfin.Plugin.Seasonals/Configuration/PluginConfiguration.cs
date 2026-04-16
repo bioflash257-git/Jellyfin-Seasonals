@@ -45,6 +45,7 @@ public class PluginConfiguration : BasePluginConfiguration
         Snowflakes = new SnowflakesOptions();
         Snowstorm = new SnowstormOptions();
         Space = new SpaceOptions();
+        NightSky = new NightSkyOptions();
         Spooky = new SpookyOptions();
         Sports = new SportsOptions();
         Spring = new SpringOptions();
@@ -135,6 +136,7 @@ public class PluginConfiguration : BasePluginConfiguration
     public SnowflakesOptions Snowflakes { get; set; }
     public SnowstormOptions Snowstorm { get; set; }
     public SpaceOptions Space { get; set; }
+    public NightSkyOptions NightSky { get; set; }
     public SpookyOptions Spooky { get; set; }
     public SportsOptions Sports { get; set; }
     public SpringOptions Spring { get; set; }
@@ -345,6 +347,10 @@ public class SpaceOptions {
     public int RocketCount { get; set; } = 1;
     public bool EnableDifferentDuration { get; set; } = true;
     public int SymbolCountMobile { get; set; } = 2;
+}
+
+public class NightSkyOptions {
+    public bool EnableNightSky { get; set; } = true;
 }
 
 public class SpookyOptions {

@@ -1,72 +1,17 @@
 /*
- * Seasonals Plugin (Client Side Manager Logic)
- */
+* Seasonals Plugin (Client Side Manager Logic)
+*/
 
 const ThemeConfigs = {
-    snowflakes: {
-        css: '../Seasonals/Resources/snowflakes.css',
-        js: '../Seasonals/Resources/snowflakes.js',
-        containerClass: 'snowflakes'
-    },
-    snowfall: {
-        css: '../Seasonals/Resources/snowfall.css',
-        js: '../Seasonals/Resources/snowfall.js',
-        containerClass: 'snowfall-container'
-    },
-    snowstorm: {
-        css: '../Seasonals/Resources/snowstorm.css',
-        js: '../Seasonals/Resources/snowstorm.js',
-        containerClass: 'snowstorm-container'
-    },
-    fireworks: {
-        css: '../Seasonals/Resources/fireworks.css',
-        js: '../Seasonals/Resources/fireworks.js',
-        containerClass: 'fireworks'
-    },
-    halloween: {
-        css: '../Seasonals/Resources/halloween.css',
-        js: '../Seasonals/Resources/halloween.js',
-        containerClass: 'halloween-container'
-    },
-    hearts: {
-        css: '../Seasonals/Resources/hearts.css',
-        js: '../Seasonals/Resources/hearts.js',
-        containerClass: 'hearts-container'
-    },
-    christmas: {
-        css: '../Seasonals/Resources/christmas.css',
-        js: '../Seasonals/Resources/christmas.js',
-        containerClass: 'christmas-container'
-    },
-    santa: {
-        css: '../Seasonals/Resources/santa.css',
-        js: '../Seasonals/Resources/santa.js',
-        containerClass: 'santa-container'
-    },
     autumn: {
         css: '../Seasonals/Resources/autumn.css',
         js: '../Seasonals/Resources/autumn.js',
         containerClass: 'autumn-container'
     },
-    easter: {
-        css: '../Seasonals/Resources/easter.css',
-        js: '../Seasonals/Resources/easter.js',
-        containerClass: 'easter-container'
-    },
-    resurrection: {
-        css: '../Seasonals/Resources/resurrection.css',
-        js: '../Seasonals/Resources/resurrection.js',
-        containerClass: 'resurrection-container'
-    },
-    summer: {
-        css: '../Seasonals/Resources/summer.css',
-        js: '../Seasonals/Resources/summer.js',
-        containerClass: 'summer-container'
-    },
-    spring: {
-        css: '../Seasonals/Resources/spring.css',
-        js: '../Seasonals/Resources/spring.js',
-        containerClass: 'spring-container'
+    birthday: {
+        css: '../Seasonals/Resources/birthday.css',
+        js: '../Seasonals/Resources/birthday.js',
+        containerClass: 'birthday-container'
     },
     carnival: {
         css: '../Seasonals/Resources/carnival.css',
@@ -78,20 +23,90 @@ const ThemeConfigs = {
         js: '../Seasonals/Resources/cherryblossom.js',
         containerClass: 'cherryblossom-container'
     },
-    matrix: {
-        css: '../Seasonals/Resources/matrix.css',
-        js: '../Seasonals/Resources/matrix.js',
-        containerClass: 'matrix-container'
+    christmas: {
+        css: '../Seasonals/Resources/christmas.css',
+        js: '../Seasonals/Resources/christmas.js',
+        containerClass: 'christmas-container'
+    },
+    earthday: {
+        css: '../Seasonals/Resources/earthday.css',
+        js: '../Seasonals/Resources/earthday.js',
+        containerClass: 'earthday-container'
+    },
+    easter: {
+        css: '../Seasonals/Resources/easter.css',
+        js: '../Seasonals/Resources/easter.js',
+        containerClass: 'easter-container'
+    },
+    eid: {
+        css: '../Seasonals/Resources/eid.css',
+        js: '../Seasonals/Resources/eid.js',
+        containerClass: 'eid-container'
     },
     eurovision: {
         css: '../Seasonals/Resources/eurovision.css',
         js: '../Seasonals/Resources/eurovision.js',
         containerClass: 'eurovision-container'
     },
-    storm: {
-        css: '../Seasonals/Resources/storm.css',
-        js: '../Seasonals/Resources/storm.js',
-        containerClass: 'storm-container'
+    filmnoir: {
+        css: '../Seasonals/Resources/filmnoir.css',
+        js: '../Seasonals/Resources/filmnoir.js',
+        containerClass: 'filmnoir-container'
+    },
+    fireworks: {
+        css: '../Seasonals/Resources/fireworks.css',
+        js: '../Seasonals/Resources/fireworks.js',
+        containerClass: 'fireworks'
+    },
+    frost: {
+        css: '../Seasonals/Resources/frost.css',
+        js: '../Seasonals/Resources/frost.js',
+        containerClass: 'frost-container'
+    },
+    friday13: {
+        css: '../Seasonals/Resources/friday13.css',
+        js: '../Seasonals/Resources/friday13.js',
+        containerClass: 'friday13-container'
+    },
+    halloween: {
+        css: '../Seasonals/Resources/halloween.css',
+        js: '../Seasonals/Resources/halloween.js',
+        containerClass: 'halloween-container'
+    },
+    hearts: {
+        css: '../Seasonals/Resources/hearts.css',
+        js: '../Seasonals/Resources/hearts.js',
+        containerClass: 'hearts-container'
+    },
+    marioday: {
+        css: '../Seasonals/Resources/marioday.css',
+        js: '../Seasonals/Resources/marioday.js',
+        containerClass: 'marioday-container'
+    },
+    matrix: {
+        css: '../Seasonals/Resources/matrix.css',
+        js: '../Seasonals/Resources/matrix.js',
+        containerClass: 'matrix-container'
+    },
+    nightsky: {
+        css: '../Seasonals/Resources/nightsky.css',
+        js: '../Seasonals/Resources/nightsky.js',
+        containerClass: 'nightsky-container'
+    },
+    oktoberfest: {
+        css: '../Seasonals/Resources/oktoberfest.css',
+        js: '../Seasonals/Resources/oktoberfest.js',
+        containerClass: 'oktoberfest-container'
+    },
+    olympia: {
+        css: '../Seasonals/Resources/olympia.css',
+        js: '../Seasonals/Resources/olympia.js',
+        containerClass: 'olympia-container'
+    },
+    oscar: {
+        css: '../Seasonals/Resources/oscar.css',
+        js: '../Seasonals/Resources/oscar.js',
+        containerClass: 'oscar-container'
     },
     pride: {
         css: '../Seasonals/Resources/pride.css',
@@ -103,50 +118,35 @@ const ThemeConfigs = {
         js: '../Seasonals/Resources/rain.js',
         containerClass: 'rain-container'
     },
-    earthday: {
-        css: '../Seasonals/Resources/earthday.css',
-        js: '../Seasonals/Resources/earthday.js',
-        containerClass: 'earthday-container'
+    resurrection: {
+        css: '../Seasonals/Resources/resurrection.css',
+        js: '../Seasonals/Resources/resurrection.js',
+        containerClass: 'resurrection-container'
     },
-    frost: {
-        css: '../Seasonals/Resources/frost.css',
-        js: '../Seasonals/Resources/frost.js',
-        containerClass: 'frost-container'
+    santa: {
+        css: '../Seasonals/Resources/santa.css',
+        js: '../Seasonals/Resources/santa.js',
+        containerClass: 'santa-container'
     },
-    filmnoir: {
-        css: '../Seasonals/Resources/filmnoir.css',
-        js: '../Seasonals/Resources/filmnoir.js',
-        containerClass: 'filmnoir-container'
+    snowfall: {
+        css: '../Seasonals/Resources/snowfall.css',
+        js: '../Seasonals/Resources/snowfall.js',
+        containerClass: 'snowfall-container'
     },
-    oscar: {
-        css: '../Seasonals/Resources/oscar.css',
-        js: '../Seasonals/Resources/oscar.js',
-        containerClass: 'oscar-container'
+    snowflakes: {
+        css: '../Seasonals/Resources/snowflakes.css',
+        js: '../Seasonals/Resources/snowflakes.js',
+        containerClass: 'snowflakes'
     },
-    marioday: {
-        css: '../Seasonals/Resources/marioday.css',
-        js: '../Seasonals/Resources/marioday.js',
-        containerClass: 'marioday-container'
+    snowstorm: {
+        css: '../Seasonals/Resources/snowstorm.css',
+        js: '../Seasonals/Resources/snowstorm.js',
+        containerClass: 'snowstorm-container'
     },
-    starwars: {
-        css: '../Seasonals/Resources/starwars.css',
-        js: '../Seasonals/Resources/starwars.js',
-        containerClass: 'starwars-container'
-    },
-    oktoberfest: {
-        css: '../Seasonals/Resources/oktoberfest.css',
-        js: '../Seasonals/Resources/oktoberfest.js',
-        containerClass: 'oktoberfest-container'
-    },
-    friday13: {
-        css: '../Seasonals/Resources/friday13.css',
-        js: '../Seasonals/Resources/friday13.js',
-        containerClass: 'friday13-container'
-    },
-    eid: {
-        css: '../Seasonals/Resources/eid.css',
-        js: '../Seasonals/Resources/eid.js',
-        containerClass: 'eid-container'
+    space: {
+        css: '../Seasonals/Resources/space.css',
+        js: '../Seasonals/Resources/space.js',
+        containerClass: 'space-container'
     },
     spooky: {
         css: '../Seasonals/Resources/spooky.css',
@@ -158,25 +158,30 @@ const ThemeConfigs = {
         js: '../Seasonals/Resources/sports.js',
         containerClass: 'sports-container'
     },
-    olympia: {
-        css: '../Seasonals/Resources/olympia.css',
-        js: '../Seasonals/Resources/olympia.js',
-        containerClass: 'olympia-container'
+    spring: {
+        css: '../Seasonals/Resources/spring.css',
+        js: '../Seasonals/Resources/spring.js',
+        containerClass: 'spring-container'
     },
-    space: {
-        css: '../Seasonals/Resources/space.css',
-        js: '../Seasonals/Resources/space.js',
-        containerClass: 'space-container'
+    starwars: {
+        css: '../Seasonals/Resources/starwars.css',
+        js: '../Seasonals/Resources/starwars.js',
+        containerClass: 'starwars-container'
+    },
+    storm: {
+        css: '../Seasonals/Resources/storm.css',
+        js: '../Seasonals/Resources/storm.js',
+        containerClass: 'storm-container'
+    },
+    summer: {
+        css: '../Seasonals/Resources/summer.css',
+        js: '../Seasonals/Resources/summer.js',
+        containerClass: 'summer-container'
     },
     underwater: {
         css: '../Seasonals/Resources/underwater.css',
         js: '../Seasonals/Resources/underwater.js',
         containerClass: 'underwater-container'
-    },
-    birthday: {
-        css: '../Seasonals/Resources/birthday.css',
-        js: '../Seasonals/Resources/birthday.js',
-        containerClass: 'birthday-container'
     },
     none: {
         containerClass: 'none'

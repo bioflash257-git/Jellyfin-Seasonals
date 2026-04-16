@@ -70,8 +70,9 @@
                                 <option value="frost">Frost / Ice</option>
                                 <option value="halloween">Halloween</option>
                                 <option value="hearts">Hearts</option>
-                                <option value="marioday">Mario Day</option>
                                 <option value="matrix">Matrix</option>
+                                <option value="marioday">Mario Day</option>
+                                <option value="nightsky">Night Sky</option>
                                 <option value="oktoberfest">Oktoberfest</option>
                                 <option value="olympia">Olympia</option>
                                 <option value="oscar">Oscar Awards</option>
@@ -600,6 +601,18 @@
                                     <span>Background Mode (Behind UI)</span>
                                 </label>
                                 <div class="fieldDescription">Displays the Matrix animation behind library tiles and content as "Background"</div>
+                            </div>
+                        </details>
+                        <hr style="max-width: 800px; margin: 1em 0;">
+
+                        <details>
+                            <summary>Night Sky</summary>
+                            <div class="checkboxContainer checkboxContainer-withDescription">
+                                <label class="emby-checkbox-label">
+                                    <input id="EnableNightSky" name="EnableNightSky" type="checkbox" is="emby-checkbox" />
+                                    <span>Enable Night Sky Seasonal</span>
+                                </label>
+                                <div class="fieldDescription">Enable the Night Sky theme (starfield and nebula flow).</div>
                             </div>
                         </details>
                         <hr style="max-width: 800px; margin: 1em 0;">
@@ -1487,6 +1500,7 @@
                         '            <option value="hearts">Hearts</option>' +
                         '            <option value="marioday">Mario Day</option>' +
                         '            <option value="matrix">Matrix</option>' +
+                        '            <option value="nightsky">Night Sky</option>' +
                         '            <option value="oktoberfest">Oktoberfest</option>' +
                         '            <option value="olympia">Olympia</option>' +
                         '            <option value="oscar">Oscar Awards</option>' +
@@ -1595,6 +1609,7 @@
                         if (!config.Hearts) config.Hearts = { EnableHearts: true, SymbolCount: 25, SymbolCountMobile: 10, EnableDifferentDuration: true };
                         if (!config.MarioDay) config.MarioDay = { EnableMarioDay: true, LetMarioJump: true };
                         if (!config.Matrix) config.Matrix = { EnableMatrix: true, SymbolCount: 25, EnableMatrixBackground: false, MatrixChars: '0123456789' };
+                        if (!config.NightSky) config.NightSky = { EnableNightSky: true };
                         if (!config.Oktoberfest) config.Oktoberfest = { EnableOktoberfest: true, SymbolCount: 25, SymbolCountMobile: 10, EnableDifferentDuration: true };
                         if (!config.Olympia) config.Olympia = { EnableOlympia: true, SymbolCount: 25, SymbolCountMobile: 10, EnableDifferentDuration: true };
                         if (!config.Oscar) config.Oscar = { EnableOscar: true };
@@ -1723,6 +1738,9 @@
                         document.querySelector('#MatrixSymbolCount').value = config.Matrix.SymbolCount;
                         document.querySelector('#MatrixChars').value = config.Matrix.MatrixChars;
                         document.querySelector('#EnableMatrixBackground').checked = config.Matrix.EnableMatrixBackground;
+                        
+                        // Night Sky
+                        document.querySelector('#EnableNightSky').checked = config.NightSky.EnableNightSky;
 
                         // Oktoberfest
                         document.querySelector('#EnableOktoberfest').checked = config.Oktoberfest.EnableOktoberfest;
@@ -1893,7 +1911,6 @@
                         config.Autumn.EnableRotation = document.querySelector('#EnableRotation').checked;
 
                         // Birthday
-                        if (!config.Birthday) config.Birthday = {};
                         config.Birthday.EnableBirthday = document.querySelector('#EnableBirthday').checked;
                         config.Birthday.EnableDifferentDuration = document.querySelector('#EnableDifferentDurationBirthday').checked;
                         config.Birthday.SymbolCount = parseInt(document.querySelector('#BirthdaySymbolCount').value);
@@ -1978,12 +1995,15 @@
                         // Mario Day
                         config.MarioDay.EnableMarioDay = document.querySelector('#EnableMarioDay').checked;
                         config.MarioDay.LetMarioJump = document.querySelector('#LetMarioJump').checked;
-
+                        
                         // Matrix
                         config.Matrix.EnableMatrix = document.querySelector('#EnableMatrix').checked;
                         config.Matrix.SymbolCount = parseInt(document.querySelector('#MatrixSymbolCount').value);
                         config.Matrix.MatrixChars = document.querySelector('#MatrixChars').value;
                         config.Matrix.EnableMatrixBackground = document.querySelector('#EnableMatrixBackground').checked;
+                        
+                        // Night Sky
+                        config.NightSky.EnableNightSky = document.querySelector('#EnableNightSky').checked;
 
                         // Oktoberfest
                         config.Oktoberfest.EnableOktoberfest = document.querySelector('#EnableOktoberfest').checked;

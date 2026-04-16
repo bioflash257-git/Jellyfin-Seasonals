@@ -34,23 +34,23 @@
 }
 
 .space-shooting-star {
-    will-change: opacity;
+    will-change: transform, opacity;
     position: absolute;
-    width: 250px;
-    height: 3px;
+    width: 200px;
+    height: 2px;
     background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
     border-radius: 50%;
-    animation: space-shoot 25s linear infinite;
     opacity: 0;
     z-index: 12;
+    pointer-events: none;
+    transform-origin: right center;
 }
 
 @keyframes space-shoot {
-    0% { transform: rotate(var(--shoot-angle)) translateX(0); opacity: 0; }
-    5% { opacity: 1; }
-    35% { opacity: 1; }
-    40% { transform: rotate(var(--shoot-angle)) translateX(var(--shoot-distance)); opacity: 0; }
-    100% { transform: rotate(var(--shoot-angle)) translateX(var(--shoot-distance)); opacity: 0; }
+    0% { transform: rotate(var(--shoot-angle)) translateX(0) scaleX(0); opacity: 0; }
+    25% { transform: rotate(var(--shoot-angle)) translateX(calc(var(--shoot-distance) * 0.25)) scaleX(1); opacity: 1; }
+    75% { transform: rotate(var(--shoot-angle)) translateX(calc(var(--shoot-distance) * 0.75)) scaleX(1); opacity: 1; }
+    100% { transform: rotate(var(--shoot-angle)) translateX(var(--shoot-distance)) scaleX(0); opacity: 0; }
 }
 
 .space-symbol {
@@ -98,4 +98,18 @@
 @keyframes space-star-drift {
     from { transform: translateY(0); }
     to { transform: translateY(-100vh); }
+}
+
+@media only screen and (max-width: 768px) {
+    @keyframes space-drift-right {
+        0% { transform: translateX(-20vw) translateY(0) scaleX(-1); }
+        50% { transform: translateX(60vw) translateY(-10vh) scaleX(-1); }
+        100% { transform: translateX(140vw) translateY(0) scaleX(-1); }
+    }
+
+    @keyframes space-drift-left {
+        0% { transform: translateX(20vw) translateY(0); }
+        50% { transform: translateX(-60vw) translateY(10vh); }
+        100% { transform: translateX(-140vw) translateY(0); }
+    }
 }

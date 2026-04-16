@@ -1,0 +1,59 @@
+.nightsky-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    pointer-events: none;
+    z-index: 10;
+    overflow: hidden;
+    contain: strict;
+}
+
+.nightsky-bg-glow {
+    will-change: transform;
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: radial-gradient(circle at 70% 30%, rgba(138, 43, 226, 0.15), transparent 60%),
+                radial-gradient(circle at 20% 80%, rgba(65, 105, 225, 0.15), transparent 50%);
+    pointer-events: none;
+    z-index: 10;
+    animation: nightsky-nebula-pulse 10s ease-in-out infinite alternate;
+}
+
+@keyframes nightsky-nebula-pulse {
+    0% { opacity: 0.6; }
+    100% { opacity: 1; }
+}
+
+.nightsky-starfield {
+    position: absolute;
+    top: 0; left: 0; width: 100vw; height: 100vh;
+    background: transparent;
+    z-index: 11;
+}
+
+.nightsky-shooting-star {
+    will-change: transform, opacity;
+    position: absolute;
+    width: 200px;
+    height: 2px;
+    background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 100%);
+    border-radius: 50%;
+    opacity: 0;
+    z-index: 12;
+    pointer-events: none;
+    transform-origin: right center;
+}
+
+@keyframes nightsky-shoot {
+    0% { transform: rotate(var(--shoot-angle)) translateX(0) scaleX(0); opacity: 0; }
+    25% { transform: rotate(var(--shoot-angle)) translateX(calc(var(--shoot-distance) * 0.25)) scaleX(1); opacity: 1; }
+    75% { transform: rotate(var(--shoot-angle)) translateX(calc(var(--shoot-distance) * 0.75)) scaleX(1); opacity: 1; }
+    100% { transform: rotate(var(--shoot-angle)) translateX(var(--shoot-distance)) scaleX(0); opacity: 0; }
+}
+
+@keyframes nightsky-star-drift {
+    from { transform: translateY(0); }
+    to { transform: translateY(-100vh); }
+}

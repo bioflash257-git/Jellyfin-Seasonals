@@ -33,8 +33,15 @@ const satelliteImages = [
     "../Seasonals/Resources/space_assets/Satellite_2.gif"
 ];
 
-// Credit: https://pixabay.com/de/illustrations/raumstation-raum-struktur-8023777/
-const issImage = "../Seasonals/Resources/space_assets/iss.png";
+/**
+ * Credits:
+ * https://pixabay.com/de/illustrations/raumstation-raum-struktur-8023777/
+ * https://commons.wikimedia.org/wiki/File:Orthographic_view_of_Orion_spacecraft,_bottom-front_with_solar_panels_(23128839505).png
+ */
+const issImage = [
+    "../Seasonals/Resources/space_assets/iss.png",
+    "../Seasonals/Resources/space_assets/orion.png"
+]
 
 /**
  * Credits:
@@ -137,6 +144,7 @@ function createSpace() {
     const starLayer1 = document.createElement('div');
     starLayer1.style.width = '1px'; starLayer1.style.height = '1px';
     starLayer1.style.background = 'transparent';
+    starLayer1.style.borderRadius = '50%';
     starLayer1.style.boxShadow = boxShadows1.join(", ");
     starLayer1.style.animation = 'space-star-drift 200s linear infinite';
     starfield.appendChild(starLayer1);
@@ -144,6 +152,7 @@ function createSpace() {
     const starLayer2 = document.createElement('div');
     starLayer2.style.width = '2px'; starLayer2.style.height = '2px';
     starLayer2.style.background = 'transparent';
+    starLayer2.style.borderRadius = '50%';
     starLayer2.style.boxShadow = boxShadows2.join(", ");
     starLayer2.style.animation = 'space-star-drift 150s linear infinite';
     starfield.appendChild(starLayer2);
@@ -151,6 +160,7 @@ function createSpace() {
     const starLayer3 = document.createElement('div');
     starLayer3.style.width = '3px'; starLayer3.style.height = '3px';
     starLayer3.style.background = 'transparent';
+    starLayer3.style.borderRadius = '50%';
     starLayer3.style.boxShadow = boxShadows3.join(", ");
     starLayer3.style.animation = 'space-star-drift 100s linear infinite';
     starfield.appendChild(starLayer3);
@@ -272,7 +282,14 @@ function createSpace() {
     createSpaceItem(planetImages, pCount, 'space-planet');
     createSpaceItem(astronautImages, aCount, 'space-astronaut');
     createSpaceItem(satelliteImages, sCount, 'space-satellite');
-    createSpaceItem([issImage], iCount, 'space-iss');
+    let maxIssItems = Math.min(iCount, 2);
+    if (maxIssItems === 1) {
+        let randomIss = issImage[Math.floor(Math.random() * issImage.length)];
+        createSpaceItem([randomIss], 1, 'space-iss');
+    } else if (maxIssItems === 2) {
+        createSpaceItem([issImage[0]], 1, 'space-iss');
+        createSpaceItem([issImage[1]], 1, 'space-iss');
+    }
     createSpaceItem(rocketImages, rCount, 'space-rocket');
 }
 
